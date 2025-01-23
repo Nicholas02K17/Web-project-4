@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /*
+        background-image: url(bunker_image.PNG); Sets the background image, i cannot add an alt because this is an ID
+        width: 100vw; Makes the background span the full width of the viewport
+        background-size: cover; Ensures the background image covers the container
+        position: absolute; Positions the element relative to its nearest positioned ancestor
+        margin-top: 1300px; Creates spacing above the section
+        height: 125%; Sets the height of the background image
+        */
+        #Screenshot {
+            background-image: url(bunker_image.PNG);
+            width: 100vw;
+            background-size: cover;
+            position: absolute;
+            margin-top: 1300px;
+            height: 125%;
+        }
+
+        /*
+        text-align: center; Centers all text within the section horizontally 
+        padding: 9rem 2rem; Adds 9rem vertical padding and 2rem horizontal padding 
+        background: linear-gradient(to bottom, #1e1e1e, #2b2b2b); Creates a gradient background from dark gray to black 
+        position: relative; Allows precise positioning of child elements inside the section 
+        overflow: hidden; Hides any content that overflows the section's bounds 
+        flex: 1; Makes the section flexible in size within its parent container 
+        display: flex; Enables flexbox for layout management of child elements 
+        flex-direction: column; Stacks child elements vertically 
+        justify-content: center; Centers child elements vertically within the section 
+        align-items: center; Centers child elements horizontally within the section 
+        height: 100; Specifies the height of the container
+        overflow-y: auto; Adds a vertical scrollbar when content overflows
+        */
+        .main-content {
+            text-align: center;
+            padding: 9rem 2rem;
+            background: linear-gradient(to bottom, #1e1e1e, #2b2b2b);
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100;
+            overflow-y: auto;
+        }
+
+        /*
+        max-width: 800px; Restricts the width of the text
+        margin: 0 auto; Centers the text within the section
+        padding: 0 1rem; Adds padding on the left and right
+        font-size: 0.9rem; Makes the text smaller as requested
+        line-height: 1.5; Improves text readability
+        z-index: 1; Ensures text stays above the background image
+        position: relative; Maintains the alignment with other elements
+        */
+        .main-content p {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            z-index: 1;
+            position: relative;
+        }
+
+        /*
+        max-width: 100%; Ensures the image spans the full width of its container
+        height: auto; Maintains the aspect ratio of the image
+        opacity: 0.7; Makes the image semi-transparent for a subtle effect
+        filter: brightness(0.6) contrast(1.2); Adjusts brightness and contrast for a dramatic effect
+        position: absolute; Positions the image relative to the section
+        top: 0; Aligns the image to the top of the section
+        left: 0; Aligns the image to the left of the section
+        width: 100%; Makes the image span the entire width of the section
+        height: 100%; Makes the image span the entire height of the section
+        z-index: 1; Ensures the image stays behind the text content
+        object-fit: cover; Ensures the image covers the entire section without distortion
+        */
+        .main-content img.bunker-image {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.7;
+            filter: brightness(0.6) contrast(1.2);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        /*
+        width: 100vw; Makes the image span the full viewport width
+        opacity: 0.7; Adds transparency to the image
+        filter: brightness(0.6) contrast(1.2); Adjusts brightness and contrast
+        position: absolute; Positions the image within its container
+        margin-top: -49px; Adjusts the vertical position
+        margin-left: -775px; Adjusts the horizontal position
+        height: 100%; Makes the image span the full height of its container
+        */
+        .main-content img.another-bunker-image {
+            width: 100vw;
+            opacity: 0.7;
+            filter: brightness(0.6) contrast(1.2);
+            position: absolute;
+            margin-top: -49px;
+            margin-left: -775px;
+            height: 100%;
+        }
+
+        /*
+        font-size: 3rem; Sets the font size of the heading text
+        margin-bottom: 1rem; Adds space below the heading 
+        z-index: 1; Ensures the heading is above the background image
+        position: relative; Allows additional fine-tuned positioning
+        color: #f5f5f5; Sets the text color to light gray for contrast against the background
+        */
+        .main-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+            position: relative;
+            color: #f5f5f5;
+        }
+
+        /*
+        font-size: 1.5rem; Sets the font size of the paragraph text
+        margin-bottom: 2rem; Adds space below the paragraph
+        z-index: 1; Ensures the paragraph is above the background image
+        position: relative; Allows additional fine-tuned positioning
+        */
+        .main-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        /*
+        display: inline-block; Makes the button behave like an inline element with block properties
+        padding: 1rem 2rem; Adds 1rem vertical and 2rem horizontal padding
+        font-size: 1.2rem; Sets the font size of the button text
+        color: #1e1e1e; Sets the text color to dark gray for contrast against the button's background
+        background-color: #d4af37; Sets the button's background color to gold
+        text-decoration: none; Removes the underline from the button text
+        border-radius: 5px; Adds rounded corners to the button
+        transition: background-color 0.3s ease; Smoothly changes the background color on hover
+        z-index: 1; Ensures the button is above the background image
+        position: relative; Allows additional fine-tuned positioning
+        */
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #1e1e1e;
+            background-color: #d4af37;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+
+        /*
+        background-color: #2b2b2b; Sets the footer background color
+        text-align: center; Centers the footer content
+        padding: 1rem; Adds padding inside the footer
+        */
+        footer {
+            background-color: #2b2b2b;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- i put the logo inside a div to style it more easily
+        i put all the elements inside an unordered list so it can be styled more easily -->
+    <header>
+        <div class="logo">
+            <h1>Escape the Bunker</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="instructions.html">How To Play</a></li>
+                <li><a href="install.html">Install</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- this is the main section with a background image and the header -->
+        <section>
+            <img src="a-realistic-and-3D-creepy-bunker.png" alt="Creepy Bunker" class="bunker-image">
+            <h2>About Escape the bunker</h2>
+        </section>
+        <!-- this is the div for the Screenshot image -->
+        <div id="Screenshot">
+            <!-- this is the section for the Screenshot image -->
+            <section id="section1">
+                <p>Escape the bunker is a game inspired by a Roblox game called area 51 created by homermafia1.</p>
+                <br />
+                <p>But unlike the Roblox version, this one has been created in an application called unity, 
+                    which is a powerful and popular game engine used by millions of developers worldwide to create fun games.</p>
+                <br />
+                <p>But the process wasn&apos;t just unity, 
+                    I had multiple scripts for this game to make sure that everything functions properly </p>
+                <br />
+                <p>If you want to see the scripts, they are in the zipped folder with the project itself, so if you ever had the idea to install
+                    cheats from a random pirate website, you don&apos;t have to! Because the scripts are already included in the downloadable file!
+                    But not just the scripts! The objects, colors, all of that is included in the downloadable zip folder, which means that you can
+                    just make the cheats yourself! It's like buying a tractor and wanting to 
+                    buy some additional parts, but the parts are already included in the package with the tractor!</p>
+                <br />
+            </section>
+            <!-- this is the section for the google image with a button at the bottom for the log -->
+            <section id="section2">
+                <img src="abandoned_wwii_bunkers_are_both_creepy_and_majestic_640_02.jpg" alt="another creepy bunker image" class="another-bunker-image">
+                <p>You may wonder why I said “I”, well, I did create this myself, 
+                    then you may ask, “well why don&apos;t you have a team?” I don&apos;t
+                    have a team because this was simply a school project, and Guess what? This is a school project as well, 
+                    yes, you read that right, making a website for you to install this fun game was the most convenient thing I could have 
+                    done for a school project, so you don&apos;t have to go on pirated websites to install this game.</p>
+                <br />
+                <p>If you try to pirate this game, you will face big consequences, and the pirate website will face them as well, 
+                    there is no reason to pirate the game as well because the game is FREE! </p>
+                <br />
+                <p>A lot of hard work was put into this game, including an entire log i had to write to record what I did each day.
+                    If you want to see the log on what the development looked like each day, the downloadable file is here! </p>
+                <a href="Log.Debug.docx" class="button">Log</a>
+            </section>
+        </div>
+    </main>
+    <!-- entity for the copyright
+    i put also the div in a class called social for styling -->
+    <footer>
+        <div class="copyright"></div>
+        <p>&copy; 2025 Escape the Bunker. All rights reserved. The first image is generated by AI, the second image is owned by the creator of the website, the third's source is here: <a href="https://images.app.goo.gl/fCDzKiLPxfTo8YHt5">link address</a></p>
+        <div class="social">
+            <a href="https://x.com/?lang=en-ca&mx=2">Twitter</a> | <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">Facebook</a> | <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
